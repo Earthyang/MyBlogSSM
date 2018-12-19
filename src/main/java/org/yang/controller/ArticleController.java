@@ -25,6 +25,22 @@ public class ArticleController {
     @Resource
     private UserService userService;
 
+    @RequestMapping("/detail/{id}/firstPage")
+    public String detail(@PathVariable("id") Long id, Model model){
+        Article article = articleService.getArticleById(id);
+        Markdown markdown = new Markdown();
+        try {
+            StringWriter out = new StringWriter();
+            markdown.transform(new StringReader(article.getContent()), out);
+            out.flush();
+            article.setContent(out.toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("article", article);
+        return "views/detail";
+    }
+
     @RequestMapping("/")
     public String index(Model model){
         List<Article> articles = articleService.getFirst10Article();

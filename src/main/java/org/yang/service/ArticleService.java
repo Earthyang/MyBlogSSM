@@ -22,6 +22,8 @@ public class ArticleService {
 
     public Article getArticleById(Long id) {
         Article article = articleDao.getArticleById(id);
+        System.out.println("标题：" + article.getCategoryId());
+        //article.setCategory("哈哈哈哈哈哈");
         article.setCategory(articleDao.getCategoryById(article.getCategoryId()).getDisplayName());
         return article;
     }
