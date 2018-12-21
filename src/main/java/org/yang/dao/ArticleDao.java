@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * 定义对于文章的操作
+ * Repository ：声明当前是一个持久化（DAO）层
  * @author yang
  * @Time 2018-12-18
  */
@@ -32,7 +33,7 @@ public interface ArticleDao {
      * @param categoryId [in] 类别
      * @return List<Article></>
      */
-    public List<Article> getArticlesByCategoryName(Long categoryId);
+    public List<Article> getArticlesByCategoryID(Long categoryId);
 
     /**
      * 查询文章种类

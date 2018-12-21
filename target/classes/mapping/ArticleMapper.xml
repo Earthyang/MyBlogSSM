@@ -31,7 +31,7 @@
     <select id="getCategoryById" parameterType="long" resultMap="categoryType">
         SELECT * FROM category WHERE id=#{id}
     </select>
-    <select id="getArticlesByCategoryName" parameterType="long" resultType="org.yang.entity.Article">
+    <select id="getArticlesByCategoryID" parameterType="long" resultType="org.yang.entity.Article">
         SELECT a.*,c.name as category FROM article a,category c WHERE a.categoryId=c.id AND categoryId=#{categoryId}
     </select>
 </mapper>

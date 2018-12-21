@@ -22,8 +22,6 @@ public class ArticleService {
 
     public Article getArticleById(Long id) {
         Article article = articleDao.getArticleById(id);
-        System.out.println("标题：" + article.getCategoryId());
-        //article.setCategory("哈哈哈哈哈哈");
         article.setCategory(articleDao.getCategoryById(article.getCategoryId()).getDisplayName());
         return article;
     }
@@ -38,7 +36,7 @@ public class ArticleService {
 
     public void writeBlog(Article article) {
         Long categoryId = articleDao.getCategoryIdByName(article.getCategory());
-        article.setCategoryId(categoryId);
+        article.setCategoryId(1L);
         article.setDate(sdf.format(new Date()));
         if (article.getSummary() == null || "".equals(article.getSummary())) {
             if (article.getContent().length() > 20) {
@@ -68,7 +66,7 @@ public class ArticleService {
 
     public List<Article> getArticlesByCategoryName(String name) {
         Long categoryId = articleDao.getCategoryIdByName(name);
-        List<Article> articles = articleDao.getArticlesByCategoryName(categoryId);
+        List<Article> articles = articleDao.getArticlesByCategoryID(categoryId);
         return articles;
     }
 

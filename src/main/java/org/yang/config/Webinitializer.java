@@ -11,7 +11,7 @@ import javax.servlet.ServletRegistration;
 
 /**
  * WebApplicationInitializer 接口只有一个方法 onStartup，
- * 通过他的参数 servletContext 我们可以实现注册我们的自定义
+ * 通过参数 servletContext 我们可以实现注册我们的自定义
  * Servlet 和自定义 Filter 到 SpringMVC 中
  * @author yang
  * @date 2018-12-18

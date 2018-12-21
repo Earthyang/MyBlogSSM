@@ -39,14 +39,22 @@
                     <li id="ubuntuPage"><a href="<%=contextPath%>/column/Ubuntu专栏/ubuntuPage">Ubuntu专栏</a>
                     </li>
                 </ul>
+                <form class="navbar-form navbar-right" action="index.jsp">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" >登录</button>
+                        </span>
+                    </div>
+                </form>
                 <form class="navbar-form navbar-right">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="搜索">
                         <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
+                              <button class="btn btn-default" type="button">Go!</button>
+                        </span>
                     </div>
                 </form>
+
             </div>
         </div>
     </nav>
@@ -57,7 +65,7 @@
     if (id=="") {
         id = "firstPage";
     }
-    var ids = ["firstPage", "webPage", "androidPage", "rnPage", "ubuntuPage"];
+    var ids = ["firstPage", "webPage", "androidPage", "rnPage", "ubuntuPage" ];
     for (var i = 0; i < ids.length; i++) {
         if (id == ids[i]) {
             $("#" + id).attr("class", "active");

@@ -5,7 +5,9 @@ import org.springframework.stereotype.Repository;
 import org.yang.entity.User;
 
 /**
- * 定义对user的操作,Repository标签是用来给持久层的类定义一个名字，让Spring根据这个名字关联到这个类。
+ * 定义对user的操作
+ * Repository ：声明当前是一个持久化（DAO）层
+ * @author yang
  * @Time 2018-12-18
  */
 @Repository
